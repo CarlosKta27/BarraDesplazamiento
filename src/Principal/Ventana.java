@@ -57,6 +57,9 @@ public class Ventana extends JFrame implements AdjustmentListener {
 
     @Override
     public void adjustmentValueChanged(AdjustmentEvent adjustmentEvent) {
+        Color color = new Color(r,g,b);
+        Color.setOpaque(true);
+        Color.setBackground(color);
         r = rojo.getValue();
         g = verde.getValue();
         b = azul.getValue();
