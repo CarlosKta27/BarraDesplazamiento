@@ -36,6 +36,19 @@ public class Ventana extends JFrame implements AdjustmentListener {
         panel.add(azul);
         add(panel, BorderLayout.CENTER);
 
+        rojo.addAdjustmentListener(this);
+        rojo.setMaximum(255);
+        rojo.setMinimum(0);
+        rojo.setVisibleAmount(0);
+        verde.addAdjustmentListener(this);
+        verde.setMaximum(255);
+        verde.setMinimum(0);
+        verde.setVisibleAmount(0);
+        azul.addAdjustmentListener(this);
+        azul.setMaximum(255);
+        azul.setMinimum(0);
+        azul.setVisibleAmount(0);
+
         setVisible(true);
         setSize(500,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,6 +60,6 @@ public class Ventana extends JFrame implements AdjustmentListener {
         r = rojo.getValue();
         g = verde.getValue();
         b = azul.getValue();
-        setTitle("R"+r+"G"+g+"B"+b);
+        setTitle("R: "+r+" G: "+g+" B: "+b);
     }
 }
