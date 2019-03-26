@@ -2,8 +2,10 @@ package Principal;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame implements AdjustmentListener {
     JPanel panel;
     BorderLayout borderLayout = new BorderLayout();
     JScrollBar rojo,verde,azul;
@@ -36,6 +38,11 @@ public class Ventana extends JFrame {
         setVisible(true);
         setSize(500,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    @Override
+    public void adjustmentValueChanged(AdjustmentEvent adjustmentEvent) {
 
     }
 }
