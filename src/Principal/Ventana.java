@@ -8,25 +8,33 @@ public class Ventana extends JFrame {
     BorderLayout borderLayout = new BorderLayout();
     JScrollBar rojo,verde,azul;
     JLabel Color;
-    Color negro = new Color(0);
     GridLayout gridLayout;
+
     void init()
     {
-        gridLayout = new GridLayout(3,1);
         panel = new JPanel();
         Color = new JLabel("Color");
         setLayout(borderLayout);
+
         rojo = new JScrollBar();
         verde = new JScrollBar();
         azul = new JScrollBar();
-        rojo.setBackground(negro);
-        add(Color);
+
+        rojo.setOrientation(0);
+        azul.setOrientation(0);
+        verde.setOrientation(0);
+
+
+        add(Color,BorderLayout.NORTH);
+        gridLayout = new GridLayout(3,1);
         panel.setLayout(gridLayout);
-        panel.add(rojo,BorderLayout.NORTH);
-        panel.add(verde,BorderLayout.NORTH);
-        panel.add(azul,BorderLayout.NORTH);
-        add(panel);
+        panel.add(rojo);
+        panel.add(verde);
+        panel.add(azul);
+        add(panel, BorderLayout.CENTER);
+
         setVisible(true);
+        setSize(500,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
