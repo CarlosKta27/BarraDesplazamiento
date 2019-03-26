@@ -11,6 +11,7 @@ public class Ventana extends JFrame implements AdjustmentListener {
     JScrollBar rojo,verde,azul;
     JLabel Color;
     GridLayout gridLayout;
+    int r=0,g=0,b=0;
 
     void init()
     {
@@ -43,6 +44,9 @@ public class Ventana extends JFrame implements AdjustmentListener {
 
     @Override
     public void adjustmentValueChanged(AdjustmentEvent adjustmentEvent) {
-
+        r = rojo.getValue();
+        g = verde.getValue();
+        b = azul.getValue();
+        setTitle("R"+r+"G"+g+"B"+b);
     }
 }
